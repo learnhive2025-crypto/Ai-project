@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Career Quiz</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<nav class="navbar">
+
+    <div class="navbar-content">
+
+        <div class="logo">
+            AI Career Compass
+        </div>
+
+        <div class="nav-text">
+            15 Questions
+        </div>
+
+    </div>
+
+</nav>
+
+
+<main class="quiz-container">
+
+
+    <div class="quiz-header">
+
+
+        <h1>
+            Career Exploration Quiz
+        </h1>
+
+
+        <p>
+            Choose the option that feels most natural to you.
+        </p>
+
+
+        <div class="student-box">
+
+
+            <label for="student_id">
+
+                Student ID
+
+            </label>
+
+
+            <input
+
+                type="text"
+
+                id="student_id"
+
+                name="student_id"
+
+                placeholder="Example: S101"
+
+                form="quiz-form"
+
+                required
+
+            >
+
+
+        </div>
+
+
+    </div>
+
+
+    <form
+
+        id="quiz-form"
+
+        action="/submit"
+
+        method="POST"
+
+    >
+
+
+        {% for q in questions %}
+
+
+        <div class="question-card">
+
+
+            <div class="question-number">
+
+                QUESTION {{ loop.index }} OF 15
+
+            </div>
+
+
+            <div class="question-text">
+
+                {{ q["question"] }}
+
+            </div>
+
+
+            <label class="option">
+
+
+                <input
+
+                    type="radio"
+
+                    name="{{ q['question_id'] }}"
+
+                    value="A"
+
+                    required
+
+                >
+
+
+                <span class="option-text">
+
+                    {{ q["option_a"] }}
+
+                </span>
+
+
+            </label>
+
+
+            <label class="option">
+
+
+                <input
+
+                    type="radio"
+
+                    name="{{ q['question_id'] }}"
+
+                    value="B"
+
+                >
+
+
+                <span class="option-text">
+
+                    {{ q["option_b"] }}
+
+                </span>
+
+
+            </label>
+
+
+            <label class="option">
+
+
+                <input
+
+                    type="radio"
+
+                    name="{{ q['question_id'] }}"
+
+                    value="C"
+
+                >
+
+
+                <span class="option-text">
+
+                    {{ q["option_c"] }}
+
+                </span>
+
+
+            </label>
+
+
+            <label class="option">
+
+
+                <input
+
+                    type="radio"
+
+                    name="{{ q['question_id'] }}"
+
+                    value="D"
+
+                >
+
+
+                <span class="option-text">
+
+                    {{ q["option_d"] }}
+
+                </span>
+
+
+            </label>
+
+
+        </div>
+
+
+        {% endfor %}
+
+
+        <div class="submit-area">
+
+
+            <button
+
+                type="submit"
+
+                class="btn"
+
+            >
+
+                Submit & View Result
+
+            </button>
+
+
+        </div>
+
+
+    </form>
+
+
+</main>
+
+
+<footer class="footer">
+
+    AI Career Compass
+
+</footer>
+
+
+</body>
+
+</html>

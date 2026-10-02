@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Career Result</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+<body>
+<nav class="navbar">
+    <div class="navbar-content">
+        <div class="logo">
+            AI Career Compass
+        </div>
+        <div class="nav-text">
+            Career Exploration Result
+        </div>
+    </div>
+</nav>
+<main class="result-container">
+    <div class="result-card">
+        <div class="result-label"> STUDENT ID </div>
+        <h3>   {{ student_id }}</h3>
+        <div class="score-section">
+            <div class="result-label">  CAREER AREA TO EXPLORE </div>
+            <h1 class="result-career">
+                {{ recommendation }}
+            </h1>
+        </div>
+
+        <div class="info-box">
+
+            <strong>
+                Career Exploration Result
+            </strong>
+
+            <p>
+                This result is based on the answers
+                provided in the career exploration quiz.
+            </p>
+            <p>
+                Use this as a starting point to explore
+                subjects, courses and career opportunities.
+            </p>
+        </div>
+        <div class="score-section">
+            <h2>
+                Your Interest Profile
+            </h2>
+            <div class="score-grid">
+                <div class="score-card">
+                    <h3>
+                        Computer Science
+                    </h3>
+                    <div class="score-value">
+                        {{ scores["CS"] }}
+                    </div>
+                </div>
+                <div class="score-card">
+                    <h3>
+                        Engineering
+                    </h3>
+                    <div class="score-value">
+                        {{ scores["ENG"] }}
+                    </div>
+                </div>
+                <div class="score-card">
+
+                    <h3>
+                        Biology
+                    </h3>
+
+                    <div class="score-value">
+
+                        {{ scores["BIO"] }}
+
+                    </div>
+
+                </div>
+                <div class="score-card">
+
+                    <h3>
+                        Biotechnology
+                    </h3>
+
+                    <div class="score-value">
+
+                        {{ scores["BT"] }}
+
+                    </div>
+
+                </div>
+
+
+                <!-- COM -->
+
+                <div class="score-card">
+
+                    <h3>
+                        Commerce
+                    </h3>
+
+                    <div class="score-value">
+
+                        {{ scores["COM"] }}
+
+                    </div>
+
+                </div>
+
+
+                <!-- ART -->
+
+                <div class="score-card">
+
+                    <h3>
+                        Arts & Humanities
+                    </h3>
+
+                    <div class="score-value">
+
+                        {{ scores["ART"] }}
+
+                    </div>
+
+                </div>
+
+
+                <!-- MED -->
+
+                <div class="score-card">
+
+                    <h3>
+                        Media
+                    </h3>
+
+                    <div class="score-value">
+
+                        {{ scores["MED"] }}
+
+                    </div>
+
+                </div>
+
+
+                <!-- DES -->
+
+                <div class="score-card">
+
+                    <h3>
+                        Design
+                    </h3>
+
+                    <div class="score-value">
+
+                        {{ scores["DES"] }}
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <div style="margin-top: 30px;">
+
+
+            <a
+
+                href="/"
+
+                class="btn"
+
+            >
+
+                Take Quiz Again
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</main>
+<footer class="footer">
+
+    AI Career Compass • Student Career Exploration Project
+
+</footer>
+
+
+</body>
+
+</html>
